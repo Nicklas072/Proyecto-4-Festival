@@ -1,0 +1,52 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative;    // ESTO TRABAJA SOBRE EL PORCENTAJE QUE ABARCA EL VIDEO EN LA PANTALLA
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;    
+
+
+    .overlay{
+        position: absolute;
+        background: rgb(49,196,227);
+        background: linear-gradient(241deg, rgba(49,196,227,0.356102182083771) 0%, rgba(0,26,255,0.3701077843246674) 82%);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    } 
+
+    video{
+        width: auto;
+        display: block;
+
+        @include m.desktop {
+            width: 100%;
+        }
+    }
+}
+
+.contenido-video{
+    z-index: 10;
+
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    p {
+        background: rgb(26,17,219);
+        background: linear-gradient(291deg, rgba(26,17,219,0.3) 0%, rgba(0,0,0,1) 100%);
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 2rem;
+    
+    }
+}
